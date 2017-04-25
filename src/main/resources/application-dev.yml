@@ -1,0 +1,6 @@
+server:
+  port: 8081
+people:
+  name: 赵武
+  age: 18
+  job: Java研发工程师
