@@ -1,6 +1,8 @@
 package com.nezha;
 
+import org.aspectj.apache.bcel.classfile.Code;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -61,6 +63,12 @@ public class CoderController {
     @PostMapping(value = "coder/two")
     public void coderTwo(){
         coderService.insertTwo();
+    }
+    //8.自定义sql语句查询
+
+    @GetMapping(value = "/coder/find")
+    public Coder CoderFindByTask(){
+        return coderRepository.getMaxIdCoder();
     }
 
 }
